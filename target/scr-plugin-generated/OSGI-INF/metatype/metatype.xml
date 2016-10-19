@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/metatype">
+    <OCD id="com.caliberhomeloans.authenticator.chlauthenticator.internal" name="%com.caliberhomeloans.authenticator.chlauthenticator.internal.name" description="%com.caliberhomeloans.authenticator.chlauthenticator.internal.description"/>
+    <Designate pid="com.caliberhomeloans.authenticator.chlauthenticator.internal">
+        <Object ocdref="com.caliberhomeloans.authenticator.chlauthenticator.internal"/>
+    </Designate>
+</metatype:MetaData>
