@@ -36,7 +36,6 @@ import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
 import org.wso2.carbon.identity.entitlement.EntitlementService;
 import org.wso2.carbon.user.api.UserRealm;
 import org.wso2.carbon.user.core.UserStoreException;
-import org.wso2.carbon.user.core.jdbc.JDBCUserStoreManager;
 import org.wso2.carbon.user.core.ldap.ReadWriteLDAPUserStoreManager;
 import org.wso2.carbon.user.core.util.UserCoreUtil;
 import org.wso2.carbon.utils.multitenancy.MultitenantUtils;
@@ -78,8 +77,8 @@ public class BasicCustomAuthenticator extends BasicAuthenticator {
                                                  HttpServletResponse response, AuthenticationContext context)
             throws AuthenticationFailedException {
 
-        String username = request.getParameter(BasicCustomAuthenticatorConstants.USER_NAME);
-        String password = request.getParameter(BasicCustomAuthenticatorConstants.PASSWORD);
+        String username = request.getParameter(CHLAuthenticatorConstants.USER_NAME);
+        String password = request.getParameter(CHLAuthenticatorConstants.PASSWORD);
 
         if (log.isDebugEnabled()) {
             log.debug("context.getServiceProviderName(): " + context.getServiceProviderName());
@@ -304,11 +303,11 @@ public class BasicCustomAuthenticator extends BasicAuthenticator {
 
     @Override
     public String getFriendlyName() {
-        return BasicCustomAuthenticatorConstants.AUTHENTICATOR_FRIENDLY_NAME;
+        return CHLAuthenticatorConstants.AUTHENTICATOR_FRIENDLY_NAME;
     }
 
     @Override
     public String getName() {
-        return BasicCustomAuthenticatorConstants.AUTHENTICATOR_NAME;
+        return CHLAuthenticatorConstants.AUTHENTICATOR_NAME;
     }
 }

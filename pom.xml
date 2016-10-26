@@ -122,12 +122,22 @@
                             org.wso2.carbon.identity.entitlement,
                             org.wso2.carbon.user.api,
                             org.wso2.carbon.utils.multitenancy,
+                            org.wso2.carbon.identity.application.common.model,
 
                             org.apache.commons.logging.*,
                             org.osgi.framework.*,
                             org.osgi.service.component.*,
                             org.w3c.dom,
                             org.xml.sax,
+
+                            org.apache.http,
+                            org.apache.http.client,
+                            org.apache.http.client.entity,
+                            org.apache.http.client.methods,
+                            org.apache.http.impl.client,
+                            org.apache.http.message,
+                            org.apache.http.util,
+                            org.json,
 
                             javax.servlet.http.*,
                             javax.xml.*; version="0.0.0"

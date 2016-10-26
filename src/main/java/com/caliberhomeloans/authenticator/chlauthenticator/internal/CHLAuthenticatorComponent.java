@@ -1,7 +1,8 @@
 package com.caliberhomeloans.authenticator.chlauthenticator.internal;
 
 import com.caliberhomeloans.authenticator.chlauthenticator.BasicCustomAuthenticator;
-import com.caliberhomeloans.authenticator.chlauthenticator.CHLAuthenticator;
+import com.caliberhomeloans.authenticator.chlauthenticator.CHLBasicAuthenticator;
+import com.caliberhomeloans.authenticator.chlauthenticator.CHLCustomClaimAuthenticator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osgi.service.component.ComponentContext;
@@ -36,9 +37,9 @@ public class CHLAuthenticatorComponent {
 
         // Register CHLAuthenticatorComponent as an OSGi Service
         context.getBundleContext().registerService(ApplicationAuthenticator.class.getName(),
-                new CHLAuthenticator(), null);
+                new CHLCustomClaimAuthenticator(), null);
         context.getBundleContext().registerService(ApplicationAuthenticator.class.getName(),
-                new BasicCustomAuthenticator(), null);
+                new CHLBasicAuthenticator(), null);
 
         log.info("CHLAuthenticatorComponent bundle is activated");
     }
