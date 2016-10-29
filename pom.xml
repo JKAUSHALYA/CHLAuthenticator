@@ -123,6 +123,7 @@
                             org.wso2.carbon.user.api,
                             org.wso2.carbon.utils.multitenancy,
                             org.wso2.carbon.identity.application.common.model,
+                            org.wso2.carbon.identity.core.model,
 
                             org.apache.commons.logging.*,
                             org.osgi.framework.*,
@@ -134,6 +135,7 @@
                             org.apache.http.client,
                             org.apache.http.client.entity,
                             org.apache.http.client.methods,
+                            org.apache.http.entity,
                             org.apache.http.impl.client,
                             org.apache.http.message,
                             org.apache.http.util,

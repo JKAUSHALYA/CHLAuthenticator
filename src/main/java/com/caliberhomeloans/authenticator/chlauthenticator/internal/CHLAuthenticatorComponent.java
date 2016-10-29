@@ -1,8 +1,7 @@
 package com.caliberhomeloans.authenticator.chlauthenticator.internal;
 
-import com.caliberhomeloans.authenticator.chlauthenticator.BasicCustomAuthenticator;
-import com.caliberhomeloans.authenticator.chlauthenticator.CHLBasicAuthenticator;
-import com.caliberhomeloans.authenticator.chlauthenticator.CHLCustomClaimAuthenticator;
+import com.caliberhomeloans.authenticator.chlauthenticator.CHLFederatedBasicAuthenticator;
+import com.caliberhomeloans.authenticator.chlauthenticator.CHLFederatedClaimAuthenticator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osgi.service.component.ComponentContext;
@@ -17,7 +16,7 @@ import org.wso2.carbon.user.core.service.RealmService;
  */
 public class CHLAuthenticatorComponent {
 
-    private static final Log log = LogFactory.getLog(BasicCustomAuthenticator.class);
+    private static final Log log = LogFactory.getLog(CHLAuthenticatorComponent.class);
 
     private static RealmService realmService;
 
@@ -35,11 +34,12 @@ public class CHLAuthenticatorComponent {
 
     protected void activate(ComponentContext context) {
 
-        // Register CHLAuthenticatorComponent as an OSGi Service
+        // Register CHL authenticators.
         context.getBundleContext().registerService(ApplicationAuthenticator.class.getName(),
-                new CHLCustomClaimAuthenticator(), null);
+                new CHLFederatedClaimAuthenticator(), null);
+
         context.getBundleContext().registerService(ApplicationAuthenticator.class.getName(),
-                new CHLBasicAuthenticator(), null);
+                new CHLFederatedBasicAuthenticator(), null);
 
         log.info("CHLAuthenticatorComponent bundle is activated");
     }
